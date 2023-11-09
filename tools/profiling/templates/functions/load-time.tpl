@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,14 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
-
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+ *}
+{function name=load_time}
+  {if $data > 1.6}
+    <span class="danger">{round($data * 1000)}</span>
+  {elseif $data > 0.8}
+    <span class="warning">{round($data * 1000)}</span>
+  {else}
+    <span class="success">{sprintf('%01.3f', $data * 1000)}</span>
+  {/if}
+  ms
+{/function}

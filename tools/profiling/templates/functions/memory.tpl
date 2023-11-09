@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,17 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
-
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+ *}
+{function name=memory}
+  {$data = round($data / 1048576, 2)}
+  {if $data > 3}
+    <span class="danger">{$data|string_format:"%0.2f"}</span>
+  {elseif $data > 1}
+    <span class="warning">{$data|string_format:"%0.2f"}</span>
+  {elseif round($data, 2) > 0}
+    <span class="success">{$data|string_format:"%0.2f"}</span>
+  {else}
+    <span class="success">-</span>
+  {/if}
+  Mb
+{/function}

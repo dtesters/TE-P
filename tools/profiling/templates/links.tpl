@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,28 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
+ *}
 
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+<div id="profiling-links">
+  <span>Profiling</span>
+  <ol>
+    <li>
+      <a href="#summary">Summary</a>
+    </li>
+    <li>
+      <a href="#stopwatch">Stopwatch SQL</a>
+    </li>
+    <li>
+      <a href="#doubles">Doubles</a>
+    </li>
+    <li>
+      <a href="#tables">Tables stress</a>
+    </li>
+    <li>
+      <a href="#objectModels">ObjectModel instances</a>
+    </li>
+    <li>
+      <a href="#includedFiles">Included Files</a>
+    </li>
+  </ol>
+</div>

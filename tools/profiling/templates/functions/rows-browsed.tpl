@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,13 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
-
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+ *}
+{function name=rows_browsed}
+  {if $data > 400}
+    <span class="danger">{$data} rows browsed</span>
+  {elseif $data > 100}
+    <span class="warning">{$data} rows browsed</span>
+  {else}
+    <span class="success">{$data} rows browsed</span>
+  {/if}
+{/function}

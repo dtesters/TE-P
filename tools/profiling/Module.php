@@ -23,10 +23,26 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
+declare(strict_types=1);
 
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+class Module extends ModuleCore
+{
+    protected static function coreLoadModule($moduleName)
+    {
+        $timeStart = microtime(true);
+        $memoryStart = memory_get_usage();
+
+        $result = parent::coreLoadModule($moduleName);
+
+        Profiler::getInstance()->interceptModule(
+            [
+                'module' => $moduleName,
+                'method' => '__construct',
+                'time' => microtime(true) - $timeStart,
+                'memory' => memory_get_usage() - $memoryStart,
+            ]
+        );
+
+        return $result;
+    }
+}

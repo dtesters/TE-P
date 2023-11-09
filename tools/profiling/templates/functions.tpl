@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,16 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
-
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+ *}
+{include file="./functions/load-time.tpl"}
+{include file="./functions/memory.tpl"}
+{include file="./functions/mysql-version.tpl"}
+{include file="./functions/objectmodel.tpl"}
+{include file="./functions/peak-memory.tpl"}
+{include file="./functions/php-version.tpl"}
+{include file="./functions/rows-browsed.tpl"}
+{include file="./functions/sql-queries.tpl"}
+{include file="./functions/table.tpl"}
+{include file="./functions/time.tpl"}
+{include file="./functions/total-queries.tpl"}
+{include file="./functions/total-querying-time.tpl"}

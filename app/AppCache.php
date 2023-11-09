@@ -23,10 +23,10 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
+require_once __DIR__ . '/AppKernel.php';
 
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+use Symfony\Bundle\FrameworkBundle\HttpCache\HttpCache;
+
+class AppCache extends HttpCache
+{
+}

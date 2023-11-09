@@ -1,5 +1,4 @@
-<?php
-/**
+{**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
@@ -22,11 +21,31 @@
  * @author    PrestaShop SA and Contributors <contact@prestashop.com>
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
- */
+ *}
+<div class="row">
+  <h2>
+    <a name="includedFiles">
+      Included Files
+    </a>
+  </h2>
 
-/**
- * Allow call of Legacy classes from classes in /src and /tests
- * @see composer.json "files" property for custom autoloading
- */
-require_once __DIR__.'/config/defines.inc.php';
-require_once __DIR__.'/config/autoload.php';
+  <table class="table table-condensed">
+    <tr>
+      <th>#</th>
+      <th>Filename</th>
+    </tr>
+    {foreach $files as $i => $file}
+      {$file = str_replace('\\', '/', str_replace(_PS_ROOT_DIR_, '', $file))}
+      {if (strpos($file, '/tools/profiling/') !== 0)}
+        <tr>
+          <td>
+            {$i}
+          </td>
+          <td>
+            {$file}
+          </td>
+        </tr>
+      {/if}
+    {/foreach}
+  </table>
+</div>
